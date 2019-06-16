@@ -22,10 +22,8 @@ export class DetailsComponent implements OnInit {
       this.contact = this.getContact.find(x => x.contact_id === this.id);
     });
   }
-  selectFavorite(index: number) {
-    //funkcija koja oznacava true/false za favorite gleda prema index-u, zato sam trebao pronaći index odabranog kontakta prema ID-u
-    let getIndex = this.getContact.findIndex(x => x.contact_id === index);
-    this.CrudService.selectFavorite(getIndex, this.getContact);
+  selectFavorite(id: number) {
+    this.CrudService.selectFavorite(id, this.getContact);
   }
 
   goBack() {

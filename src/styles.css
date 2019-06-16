@@ -22,6 +22,9 @@ a:hover {
   font-weight: bold;
   color: #4caeb7;
 }
+.headerTitleBackground img:hover {
+  cursor: pointer;
+}
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */

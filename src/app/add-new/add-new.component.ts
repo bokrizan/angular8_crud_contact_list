@@ -52,6 +52,7 @@ export class AddNewComponent implements OnInit {
   removeContactNumber(index) {
     this.contactList.removeAt(index);
   }
+  //get for reactive form
   get contactFormGroup() {
     return this.addContactForm.get("contact_phone") as FormArray;
   }

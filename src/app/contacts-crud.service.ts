@@ -1,18 +1,16 @@
 import { ToastrService } from "ngx-toastr";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root"
 })
 export class ContactsCrudService {
-  constructor(private toastr: ToastrService) {}
+  constructor(private toastr: ToastrService, private router: Router) {}
   submitForm(formData) {
     let newContact = formData;
-    //uzmi kontakte iz local storagea i pushaj novi
+    //get contact from local storage and push new
     let contactsFromLocalStorage = JSON.parse(localStorage.getItem("contactsListStorage"));
-    //postojeci kontakti
-    //savedDataToLocalStorage.push(contactsFromLocalStorage);
-    //pushanje novog kontakta
     contactsFromLocalStorage.push(
       new ContactsList(
         newContact.contact_id,
@@ -36,7 +34,8 @@ export class ContactsCrudService {
     this.toastr.error("Contact successfully deleted");
   }
 
-  selectFavorite(index: number, contact) {
+  selectFavorite(id: number, contact) {
+    let index = contact.findIndex(x => x.contact_id == id);
     if (contact[index].contact_favorite == true) {
       contact[index].contact_favorite = false;
       localStorage.setItem("contactsListStorage", JSON.stringify(contact));
@@ -58,6 +57,13 @@ export class ContactsCrudService {
     contactsListStorage[foundIndex].contact_phone = editContact.contact_phone;
     localStorage.removeItem("contactsListStorage");
     localStorage.setItem("contactsListStorage", JSON.stringify(contactsListStorage));
+  }
+
+  navigateToFavorites() {
+    this.router.navigate(["/favorites"]);
+  }
+  navigateToAll() {
+    this.router.navigate(["/"]);
   }
 }
 

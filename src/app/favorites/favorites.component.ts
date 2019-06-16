@@ -23,13 +23,13 @@ export class FavoritesComponent implements OnInit {
     location.reload();
   }
 
-  selectFavorite(index: number) {
-    this.CrudService.selectFavorite(index, this.contactsFromStorage);
+  selectFavorite(id: number) {
+    this.CrudService.selectFavorite(id, this.contactsFromStorage);
   }
   goToFavorites() {
-    this.router.navigate(["/favorites"]);
+    this.CrudService.navigateToFavorites();
   }
   goToAll() {
-    this.router.navigate([""]);
+    this.CrudService.navigateToAll();
   }
 }

@@ -37,7 +37,7 @@ export class EditComponent implements OnInit {
       this.getContact = JSON.parse(localStorage.getItem("contactsListStorage"));
       this.contact = this.getContact.find(x => x.contact_id === this.id);
 
-      /* If we wan base64 */
+      /* If we want base64 */
       //when we want to store img to local storage
       //check if avatar img is real img or base64
 

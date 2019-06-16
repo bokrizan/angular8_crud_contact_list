@@ -22,8 +22,8 @@
         <div class="anyScreen">
           <div class="row col-xl-12 col-md-12 col-sm-12">
             <div class="col-xl-8 col-md-8 col-sm-8">
-              <i *ngIf="contact.contact_favorite == false" class="iconCustom iconHeart fa fa-heart-o" (click)="selectFavorite(i)"></i>
-              <i *ngIf="contact.contact_favorite == true" class="iconCustom iconHeart fa fa-heart" (click)="selectFavorite(i)"></i>
+              <i *ngIf="contact.contact_favorite == false" class="iconCustom iconHeart fa fa-heart-o" (click)="selectFavorite(contact.contact_id)"></i>
+              <i *ngIf="contact.contact_favorite == true" class="iconCustom iconHeart fa fa-heart" (click)="selectFavorite(contact.contact_id)"></i>
             </div>
             <div class="col-xl-2 col-md-2 col-sm-2 float-right">
               <i class="iconCustom iconHeart fa fa-pencil hiddenIcon" [routerLink]="['/edit', contact.contact_id]"></i>
@@ -36,7 +36,7 @@
             <img src="{{ contact.contact_avatar }}" alt="avatar" class="rounded-circle contactCardImg" [routerLink]="['/details', contact.contact_id]" />
           </div>
           <div class="col-xl-12 col-md-12 col-sm-12 text-center">
-            <div [routerLink]="['/details', contact.contact_id]">{{ contact.contact_first_name }} {{ contact.contact_first_name }}</div>
+            <div [routerLink]="['/details', contact.contact_id]">{{ contact.contact_first_name }} {{ contact.contact_last_name }}</div>
           </div>
         </div>
         <!-- mobile -->
@@ -46,13 +46,13 @@
               <img src="{{ contact.contact_avatar }}" alt="avatar" class="rounded-circle contactCardImg" />
             </div>
             <div class="col-sm-5 col-5">
-              <div class="itemsInCard" [routerLink]="['/details', contact.contact_id]">{{ contact.contact_first_name }} {{ contact.contact_first_name }}</div>
+              <div class="itemsInCard" [routerLink]="['/details', contact.contact_id]">{{ contact.contact_first_name }} {{ contact.contact_last_name }}</div>
             </div>
             <div class="col-sm-4 col-4">
               <div class="row">
                 <div class="col-sm-4 col-4 itemsInCard">
-                  <i *ngIf="contact.contact_favorite == false" class="iconCustom iconHeart fa fa-heart-o" (click)="selectFavorite(i)"></i>
-                  <i *ngIf="contact.contact_favorite == true" class="iconCustom iconHeart fa fa-heart" (click)="selectFavorite(i)"></i>
+                  <i *ngIf="contact.contact_favorite == false" class="iconCustom iconHeart fa fa-heart-o" (click)="selectFavorite(contact.contact_id)"></i>
+                  <i *ngIf="contact.contact_favorite == true" class="iconCustom iconHeart fa fa-heart" (click)="selectFavorite(contact.contact_id)"></i>
                 </div>
                 <div class="col-sm-4 col-4 itemsInCard float-right">
                   <i class="iconCustom iconHeart fa fa-pencil" [routerLink]="['/edit', contact.contact_id]"></i>

@@ -86,14 +86,14 @@ export class AllContactsComponent implements OnInit {
     this.CrudService.onDelete(index, this.contactsList);
   }
 
-  selectFavorite(index: number) {
-    this.CrudService.selectFavorite(index, this.contactsList);
+  selectFavorite(id: number) {
+    this.CrudService.selectFavorite(id, this.contactsList);
   }
 
   goToFavorites() {
-    this.router.navigate(["/favorites"]);
+    this.CrudService.navigateToFavorites();
   }
   goToAll() {
-    this.router.navigate(["/"]);
+    this.CrudService.navigateToAll();
   }
 }
