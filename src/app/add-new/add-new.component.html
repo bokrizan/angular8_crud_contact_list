@@ -1,0 +1,93 @@
+<div class="container">
+  <form [formGroup]="addContactForm" (ngSubmit)="submitForm()">
+    <div class="row editBox">
+      <div class="col-xl-12 col-md-12 col-sm-12 col-12 mobileScreen">
+        <div class="row col-xl-12 col-md-12 col-sm-12 col-12 mobileTopNav">
+          <div class="col-xl-1 col-md-1 col-sm-1 col-1">
+            <i class="fa fa-level-up iconCustom rotate" (click)="goBack()"></i>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-3 col-sm-12 col-12 text-center editPartsBox">
+          <div class="addNewEmptyAvatar">
+            <label for="filePicker" class="uploadIcon">
+              <i class="fa fa-upload iconAddNew"></i>
+              <!-- for base64 img -->
+              <!-- <img [src]="imagePath" class="rounded-circle editImg" alt="" /> -->
+              <!-- if we want convert to base64 (change)="handleFileSelect($event)" -->
+              <input
+                type="file"
+                id="filePicker"
+                style="display: none"
+                name="image"
+                accept="image/jpeg,image/jpg,image/png"
+                multiple=""
+                data-original-title="upload photos"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-3 col-sm-12 col-12 text-center anyScreen">
+        <div class="addNewEmptyAvatar">
+          <label for="filePicker" class="uploadIcon">
+            <i class="fa fa-upload iconAddNew"></i>
+            <input
+              type="file"
+              id="filePicker"
+              style="display: none"
+              name="image"
+              accept="image/jpeg,image/jpg,image/png"
+              multiple=""
+              data-original-title="upload photos"
+            />
+          </label>
+        </div>
+      </div>
+      <div class="col-xl-9 col-md-9 col-sm-12 col-12">
+        <div class="col-xl-12 col-md-12 col-sm-12 col-12 editPartsBox anyScreen">
+          <i class="fa fa-level-up iconCustom rotate" (click)="goBack()"></i>
+        </div>
+        <div class="row col-xl-12 col-md-12 col-sm-12 col-12 editPartsBox no-gutters">
+          <div class="col-xl-12 col-md-12 col-sm-12 col-12 newContactInputTitle font-weight-bold"><i class="fa fa-user"></i> full name</div>
+          <div class="col-xl-4 col-md-4 col-sm-12 col-12 newContactInputTitle">
+            <input type="text" placeholder="First name" formControlName="contact_first_name" />
+          </div>
+          <div class="col-xl-4 col-md-4 col-sm-12 col-12 newContactInputTitle">
+            <input type="text" placeholder="Last name" formControlName="contact_last_name" />
+          </div>
+        </div>
+        <div class="col-xl-12 col-md-12 col-sm-12 col-12 editPartsBox newContactInputTitle font-weight-bold">
+          <i class="fa fa-envelope-o"></i> email<br />
+          <input type="text" placeholder="Email" formControlName="contact_email" />
+        </div>
+        <div class="row col-xl-12 col-md-12 col-sm-12 col-12 editPartsBoxWithoutBorder no-gutters">
+          <div class="col-xl-12 col-md-12 col-sm-12 col-12 newContactInputTitle font-weight-bold"><i class="fa fa-phone"></i> numbers</div>
+          <div formArrayName="contact_phone">
+            <div *ngFor="let contact of contactFormGroup.controls; let i = index">
+              <div [formGroupName]="i" class="row">
+                <div class="col-xl-5 col-md-5 col-sm-12 col-12 newContactInputTitle">
+                  <input formControlName="value" type="number" placeholder="Number" />
+                </div>
+                <div class="col-xl-5 col-md-5 col-sm-12 col-10 newContactInputTitle">
+                  <input formControlName="label" type="text" placeholder="Label" />
+                </div>
+                <div class="col-xl-2 col-md-2 col-sm-12 col-2 newContactInputTitle">
+                  <div class="removeNumber" (click)="removeContactNumber(i)"><i class="fa fa-times"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="addNumber d-flex h-100r" (click)="addContactNumber()"><i class="fa fa-plus-circle fa-2x addNew" aria-hidden="true"></i>Add number</div>
+          </div>
+        </div>
+        <div class="row col-xl-12 col-md-12 col-sm-12 col-12 editBtns">
+          <div class="col-xl-6 col-md-6 col-sm-6 col-6">
+            <button class="cancel" [routerLink]="['']">Cancel</button>
+          </div>
+          <div class="col-xl-6 col-md-6 col-sm-6 col-6 text-right">
+            <button class="save" [disabled]="!addContactForm.valid">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

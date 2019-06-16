@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row editBox">
+    <div class="col-xl-3 col-md-3 col-sm-12 col-12 text-center anyScreen">
+      <img src="{{ contact.contact_avatar }}" alt="" class="rounded-circle contactCardDetailImg" />
+    </div>
+    <div class="col-xl-3 col-md-3 col-sm-12 col-12 text-center mobileScreen">
+      <div class="row col-xl-12 col-md-12 col-sm-12 col-12 editPartsBox">
+        <div class="row col-xl-12 col-md-12 col-sm-12 col-12 detailLine mobileTopNav">
+          <div class="col-xl-1 col-md-1 col-sm-1 col-1" (click)="goBack()">
+            <i class="fa fa-level-up iconCustom rotate"></i>
+          </div>
+          <div class="col-xl-6 col-md-6 col-sm-9 col-9">
+            <i
+              *ngIf="contact.contact_favorite == false"
+              class="float-right detailHeart iconCustom iconHeart fa fa-heart-o"
+              (click)="selectFavorite(contact.contact_id)"
+            ></i>
+            <i
+              *ngIf="contact.contact_favorite == true"
+              class="float-right detailHeart iconCustom iconHeart fa fa-heart"
+              (click)="selectFavorite(contact.contact_id)"
+            ></i>
+          </div>
+          <div class="col-xl-6 col-md-6 col-sm-1 col-1" [routerLink]="['/edit', contact.contact_id]">
+            <i class="iconCustom iconHeart fa fa-pencil"></i>
+          </div>
+        </div>
+        <div class="row col-xl-12 col-md-12 col-sm-12 col-12">
+          <div class="col-xl-3 col-md-3 col-sm-3 col-3 text-center">
+            <img src="{{ contact.contact_avatar }}" alt="avatar" class="rounded-circle contactCardDetailImg imgMobile" />
+          </div>
+          <div class="col-xl-9 col-md-9 col-sm-9 col-9 text-center detailTitle detailName">
+            {{ contact.contact_first_name }} {{ contact.contact_last_name }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-9 col-md-9 col-sm-12 col-12">
+      <div class="row col-xl-12 col-md-12 col-sm-12 col-12 anyScreen editPartsBox detailLine">
+        <div class="row col-xl-12 col-md-12 col-sm-12 col-12">
+          <div class="col-xl-1 col-md-1 col-sm-1 col-12" (click)="goBack()">
+            <i class="fa fa-level-up iconCustom rotate"></i>
+          </div>
+          <div class="col-xl-8 col-md-8 col-sm-8 col-12 detailTitle">{{ contact.contact_first_name }} {{ contact.contact_last_name }}</div>
+          <div class="row col-xl-3 col-md-3 col-sm-3 col-12 float-right">
+            <div class="col-xl-6 col-md-6 col-sm-6 col-6">
+              <i *ngIf="contact.contact_favorite == false" class="iconCustom iconHeart fa fa-heart-o" (click)="selectFavorite(contact.contact_id)"></i>
+              <i *ngIf="contact.contact_favorite == true" class="iconCustom iconHeart fa fa-heart" (click)="selectFavorite(contact.contact_id)"></i>
+            </div>
+            <div class="col-xl-6 col-md-6 col-sm-6 col-6" [routerLink]="['/edit', contact.contact_id]">
+              <i class="iconCustom iconHeart fa fa-pencil"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row col-xl-12 col-md-12 col-sm-12 col-12 no-gutters detailLine">
+        <div class="col-xl-1 col-md-1 col-sm-1 col-1 newContactInputTitle"><i class="fa fa-envelope-o"></i></div>
+        <div class="row col-xl-11 col-md-11 col-sm-11 col-11">
+          <div class="col-xl-2 col-md-2 col-sm-2 col-2 newContactInputTitle font-weight-bold titleMobile">
+            email
+          </div>
+          <div class="col-xl-9 col-md-9 col-sm-9 col-12 detailInfo">
+            {{ contact.contact_email }}
+          </div>
+        </div>
+      </div>
+      <div class="row col-xl-12 col-md-12 col-sm-12 col-12 no-gutters detailLine">
+        <div class="col-xl-1 col-md-1 col-sm-1 col-1 newContactInputTitle">
+          <i class="fa fa-phone"></i>
+        </div>
+        <div class="col-xl-2 col-md-2 col-sm-2 col-2 newContactInputTitle font-weight-bold titleMobile">numbers</div>
+        <div class="row col-xl-9 col-md-9 col-sm-12 col-12 numbersContactMargin">
+          <div class="row col-xl-10 col-md-10 col-sm-12 col-12 detailInfo" *ngFor="let number of contact.contact_phone">
+            <div class="col-xl-6 col-md-6 col-sm-6 col-6 detailInfo text-uppercase">{{ number.label }}</div>
+            <div class="col-xl-6 col-md-6 col-sm-6 col-6 detailInfo">{{ number.value }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

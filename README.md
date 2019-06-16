@@ -1,6 +1,19 @@
 # ContactList
 
+After downloading the project, you need to switch to the working folder and run npm install through the console
+
+After that run ng server for the dev server, and in the browser go to http: // localhost: 4200 /
+
+##note:
+It is necessary to have Angular CLI installed.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+
+`npm install -g @angular/cli`
+
+If it is installed and there is a run-time issue, do the following:
+
+`npm uninstall -g angular-cli @angular/cli` `npm cache clean -f` `npm install -g @angular/cli`
 
 ## Development server
 

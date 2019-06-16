@@ -1,1 +1,407 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+a {
+  color: #c0c8c7;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #4caeb7;
+  text-decoration: none;
+}
+.menuContactsLinks li {
+  color: #c0c8c7;
+  cursor: pointer;
+}
+.menuContactsLinks li:hover {
+  color: #4caeb7;
+  text-decoration: none;
+}
+.menuContactsLinks .activeLink {
+  font-weight: bold;
+  color: #4caeb7;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(128, 128, 128, 0.329);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(128, 128, 128, 0.329);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(128, 128, 128, 0.329);
+}
+.rotate {
+  transform: rotate(-90deg);
+}
+.activeLink {
+  font-weight: bold;
+  color: #4caeb7;
+}
+
+.headerTitleBackground {
+  height: 40px;
+  background-color: #4caeb7;
+  border-bottom: 5px solid #7ec4ca;
+}
+.logoHeader {
+  height: 30px;
+  margin-top: 2px;
+}
+.menuContacts {
+  border-bottom: 2px solid #c5e5e8;
+  font-size: 12px;
+}
+
+.menuContactsLinks ul {
+  list-style-type: none;
+  margin: 30px 0;
+}
+.menuContactsLinks li {
+  display: inline;
+}
+.menuContactsLinks li::after {
+  content: "|";
+  margin: 0 20px;
+}
+.menuContactsLinks li:last-child::after {
+  display: none;
+}
+
+#search {
+  border: 0px solid gray;
+  -moz-box-shadow: 0px 1px 20px 3px #ccc;
+  -webkit-box-shadow: 0px 1px 20px 3px #ccc;
+  box-shadow: 0px 1px 20px 3px #ccc;
+}
+
+.contactCard:hover {
+  border: 1px solid #4caeb7;
+  cursor: pointer;
+}
+.contactCardAddNew:hover {
+  border: 1px dashed #4caeb7;
+  cursor: pointer;
+}
+.contactCardImg {
+  border: 2px solid #eaeded;
+  height: 50px;
+}
+.contactCardDetailImg {
+  height: 128px;
+}
+.iconCustom {
+  color: #dbdbdb;
+  cursor: pointer;
+}
+.iconCustom:hover {
+  color: #4caeb7;
+}
+.iconHeart {
+  margin-left: 10px;
+}
+
+.center {
+  margin: auto;
+  padding: 10px;
+}
+
+.editPartsBoxWithoutBorder {
+  padding: 15px 0;
+}
+.newContactInputTitle {
+  color: #4caeb7;
+}
+
+.editBtns {
+  margin: 40px 0;
+}
+.cancel {
+  background-color: #b3b3b3;
+  -moz-border-radius: 42px;
+  -webkit-border-radius: 42px;
+  border-radius: 42px;
+  border: 4px solid #fcfcfc;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  padding: 7px 33px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #c4c4c4;
+}
+.cancel:hover {
+  background-color: gray;
+}
+.cancel:active {
+  position: relative;
+  top: 1px;
+}
+.save {
+  background-color: #4caeb7;
+  -moz-border-radius: 42px;
+  -webkit-border-radius: 42px;
+  border-radius: 42px;
+  border: 4px solid #fcfcfc;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  padding: 7px 33px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #c4c4c4;
+}
+.save:hover {
+  background-color: #488085;
+}
+.save:active {
+  position: relative;
+  top: 1px;
+}
+.addNewEmptyAvatar {
+  height: 128px;
+  width: 128px;
+  background-color: #7ec4ca;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid #eaeded;
+}
+.uploadIcon {
+  color: white;
+  margin-top: 40%;
+  position: absolute;
+}
+.uploadIcon:hover {
+  color: #d8d8d8;
+}
+.detailTitle {
+  color: #c0c8c7;
+  font-weight: 600;
+  font-size: 18px;
+}
+.addNumber {
+  color: #4caeb7;
+  font-weight: 400;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.removeNumber {
+  color: rgba(128, 128, 128, 0.56);
+  text-align: center;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.addNew {
+  margin-right: 5px;
+}
+.editImgContainer {
+  position: relative;
+}
+.editImg {
+  height: 123px;
+  width: auto;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.342);
+}
+.editImgContainer:hover .overlay {
+  opacity: 1;
+}
+
+@media (max-width: 576px) {
+  .mobileScreen {
+    display: block;
+  }
+  .anyScreen {
+    display: none;
+  }
+  .contactCardAddNew {
+    border: 1px dashed #dbdbdb;
+    border-radius: 4px;
+    margin: 10px;
+    color: #c0c8c7;
+    height: 52px;
+  }
+  .contactCard {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    margin: 10px;
+    color: #c0c8c7;
+  }
+  .itemsInCard {
+    padding-top: 10%;
+  }
+  .detailName {
+    font-size: 24px;
+  }
+  .newContactInputTitle input {
+    border: 1px solid rgba(128, 128, 128, 0.329);
+    color: rgba(128, 128, 128, 0.56);
+    padding: 5px;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 100%;
+  }
+  .numbersContactMargin {
+    margin-left: 25px;
+    line-height: 40px;
+  }
+  .detailHeart {
+    margin-top: 3px;
+  }
+  .mobileTopNav {
+    margin-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e7e7e7;
+  }
+
+  .detailLine {
+    margin-bottom: 10px;
+  }
+  .imgMobile {
+    width: 50px;
+    height: auto;
+    border: 2px solid #eaeded;
+  }
+  .editPartsBox {
+    border-bottom: 2px solid #c5e5e8;
+    padding: 15px 0;
+    margin-bottom: 20px;
+  }
+  .icon {
+    color: rgb(122, 122, 122);
+    font-size: 20px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .iconAddNew {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .searchField {
+    background: url("./assets/img/search.png") top left no-repeat;
+    padding-left: 25px;
+    box-shadow: 0px 1px 20px 0px #8080808a;
+    border: 0px;
+    margin: 50px 0;
+    width: 90%;
+    height: 30px;
+  }
+  .mobileCardAll {
+    margin: 10px;
+  }
+  .detailInfo {
+    color: #c0c8c7;
+    font-size: 12px;
+  }
+  .titleMobile {
+    font-size: 12px;
+  }
+}
+@media (min-width: 576px) {
+  .anyScreen {
+    display: block;
+    padding: 5px;
+  }
+  .mobileScreen {
+    display: none;
+  }
+  .editBox {
+    margin-top: 40px;
+  }
+  .editPartsBox {
+    border-bottom: 2px solid #c5e5e8;
+    padding: 15px 0;
+  }
+  .detailLine {
+    margin-bottom: 30px;
+  }
+  .numbersContactMargin {
+    line-height: 40px;
+  }
+  .contactCardAddNew {
+    border: 1px dashed #dbdbdb;
+    border-radius: 4px;
+    margin: 10px;
+    color: #c0c8c7;
+    height: 134px;
+    text-align: center;
+  }
+  .contactCard {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    margin: 10px;
+    color: #c0c8c7;
+    height: 134px;
+  }
+  .contactCard .hiddenIcon {
+    visibility: hidden;
+  }
+  .contactCard:hover .hiddenIcon {
+    visibility: visible;
+  }
+  .newContactInputTitle input {
+    border: 1px solid rgba(128, 128, 128, 0.56);
+    color: rgba(128, 128, 128, 0.329);
+    padding: 5px;
+    border-radius: 4px;
+    margin: 10px 0;
+  }
+  .icon {
+    color: rgb(122, 122, 122);
+    font-size: 20px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .iconAddNew {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .searchField {
+    background: url("./assets/img/search.png") top left no-repeat;
+    padding-left: 25px;
+    box-shadow: 0px 1px 20px 0px #8080808a;
+    border: 0px;
+    margin: 50px;
+    width: 50%;
+  }
+  .detailInfo {
+    color: #c0c8c7;
+  }
+}
