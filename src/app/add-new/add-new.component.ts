@@ -13,14 +13,22 @@ export class AddNewComponent implements OnInit {
   @Input() id: number;
   addContactForm: FormGroup;
   contactList: FormArray;
+  getContact: any = [];
 
   constructor(private CrudService: ContactsCrudService, private location: Location, private formBuilder: FormBuilder, private router: Router) {
     // this.createForm();
   }
 
   ngOnInit() {
+    this.getContact = JSON.parse(localStorage.getItem("contactsListStorage"));
     this.addContactForm = this.formBuilder.group({
-      contact_id: Math.floor(Math.random() * 200) + 1,
+       // add new ID
+      contact_id: Math.max.apply(
+        Math,
+        this.getContact.map(function(o) {
+          return o.contact_id + 1;
+        })
+      ),
       contact_first_name: "",
       contact_last_name: "",
       contact_avatar: "https://i.pravatar.cc/300",
