@@ -70,7 +70,7 @@ export class AllContactsComponent implements OnInit {
     for (let entry of contactFromStorage) {
       this.contactsList.push(
         new ContactsList(
-          Math.floor(Math.random() * 200) + 1,
+          entry.contact_id,
           entry.contact_first_name,
           entry.contact_last_name,
           entry.contact_avatar,
