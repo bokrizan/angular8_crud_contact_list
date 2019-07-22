@@ -191,6 +191,11 @@ a:hover {
   font-weight: 600;
   font-size: 18px;
 }
+.logoTitle {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+}
 .addNumber {
   color: #4caeb7;
   font-weight: 400;
